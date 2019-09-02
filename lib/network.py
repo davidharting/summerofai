@@ -7,8 +7,7 @@ class LinearNet(torch.nn.Module):
         # Define layers we want in the network
         # This part is the "art" of neural nets
         # Too many neurons and we will over-fit
-        # Let's go with 4 -> 8 -> 4 for the hidden layers
-        # There is also 2 input neurons and 1 output neuron
+        # By default, we will go with 4 -> 8 -> 4 for the hidden layers, and assume 2 inputs and 1 output
         self.number_of_layers = len(nodes)
         for index, input_nodes in enumerate(nodes):
             if index < len(nodes) - 1:
@@ -20,7 +19,7 @@ class LinearNet(torch.nn.Module):
     def forward(self, x):
         """
         All networks must have this function to define how data flows through the network.
-        x -- The input tensor. In our case it will be a 2x1 tensor.
+        x -- The input tensor
         """
         F = torch.nn.functional
 
