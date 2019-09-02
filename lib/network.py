@@ -1,9 +1,6 @@
 import torch
 
 
-# setattr(obj.a, "somefield", "somevalue")
-
-
 class LinearNet(torch.nn.Module):
     def __init__(self, nodes=[2, 4, 8, 4, 1]):
         super(LinearNet, self).__init__()
